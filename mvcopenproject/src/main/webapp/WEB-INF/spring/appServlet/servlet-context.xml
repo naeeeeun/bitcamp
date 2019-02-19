@@ -101,7 +101,7 @@
 	
 		
 	
-	<beans:bean id="Aes256" class="com.bitcamp.open.security.Aes256">
+	<beans:bean id="Aes256" class="com.bitcamp.openp.security.Aes256">
 	
 	</beans:bean>
 	
