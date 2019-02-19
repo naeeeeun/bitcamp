@@ -12,8 +12,8 @@ public class MemberLoginService {
 	@Autowired
 	private MemberDao dao;
 	
-	public String selectMemberById(Member member) {
-		return dao.selectMemberById(member);
+	public Member selectMemberByEmail(String email) {
+		return dao.selectMemberByEmail(email);
 	}
 	
 }

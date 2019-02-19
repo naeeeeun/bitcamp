@@ -24,7 +24,7 @@ public class AuthCheckInterceptor extends HandlerInterceptorAdapter{
 		
 		System.out.println("비로그인 상태");
 
-		response.sendRedirect(request.getContextPath()+"/member/regForm");
+		response.sendRedirect(request.getContextPath()+"/member/loginForm");
 		
 		return false;
 	}

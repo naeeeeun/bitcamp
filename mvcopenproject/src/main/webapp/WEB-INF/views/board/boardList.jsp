@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<%
-//String referer = request.getHeader("referer");
-//request.setAttribute("referer", referer);
-//System.out.println(referer);
-%>    
+<%@ page session="false" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +28,16 @@
         div>h3{
         	margin-left : 30px;
         }
+        
+        table{
+        	border:1px solid silver;     
+        	border-collapse: collapse;   	
+        }
+        
+        td{
+        	border:1px solid silver;
+        	padding:10px;
+        }
     </style>
 </head>
 <body>
@@ -45,29 +50,22 @@
         <li><a href="memberLogout">로그아웃</a></li>
         <li><a href="memberList">회원리스트</a></li>
         <li><a href="Board">방명록작성</a></li>
-        <li><a href="BoardList">방명록리스트</a></li>
+        <li><a href="BoardList">방명록리스트</a></li> 
         <li><a href="mypage">마이페이지</a></li>      
-        <li><a href="#">사원관리</a></li> 
-    </ul>
-	<form method="post">
-	<input type="hidden" name="${referer}" value="${referer}">
+        <li><a href="#">사원관리</a></li>
+    </ul>  
+	<h1>방명록리스트</h1>
 	<table>
 		<tr>
-			<td>이메일</td>
-			<td><input type="text" name="email"></td>
+			<td>작성자</td>
+			<td>제목</td>
 		</tr>
-		<tr>
-			<td>비밀번호</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="로그인"></td>		
+		<c:forEach items="${boardlist}" var="board">
+			<tr>
+				<td>${board.bname}</td>		
+				<td><a href="#">${board.btitle}</a></td>
+			</tr>
+		</c:forEach>
 	</table>
-	</form>
-
 </body>
 </html>
-
-
-
-

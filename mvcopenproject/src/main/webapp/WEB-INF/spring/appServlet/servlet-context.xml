@@ -17,11 +17,13 @@
 	<resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
-	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"	
+		p:order="2"
+	>
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>	
-	
+	<!-- p:order="2" 안하면 커스텀 뷰 Resolver의 우선순위를 1로 해도 여기부터 적용함-->
 	
 	<!-- 데이터베이스 설정 -->
 	<!-- DataSource, JDBCTemplate, Dao(자동 설정 : @Repository) -->
@@ -38,12 +40,24 @@
 		<beans:property name="password" value="1234" />
 	</beans:bean>
 	
-	<!-- JDBCTemplate -->
-	<beans:bean 
-		id="jdbcTemplate" 
-		class="org.springframework.jdbc.core.JdbcTemplate"
-		p:dataSource-ref="dataSource"
-	/>
+
+	
+	<!-- 마이바티스 sqlSessionFactoryBean설정 -->
+	<beans:bean id="sqlSessionFactory" 
+		class="org.mybatis.spring.SqlSessionFactoryBean"
+	>
+		<!-- 데이터베이스 연결정보 설정 pool설정 -->
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+		
+		<!-- sql을 보관하는 mapper들을 등록 -->
+		<beans:property name="mapperLocations" value="classpath:com/bitcamp/openp/mapper/mybatis/*.xml"></beans:property>
+	</beans:bean>
+	
+	<!-- 템플릿 클래스 등록 -->
+	<beans:bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate" >
+		<beans:constructor-arg index="0" ref="sqlSessionFactory"></beans:constructor-arg>
+	</beans:bean>
 	
 	
 	<!-- 파일업로드 처리를 위한 multipartResolver bean 등록 -->
@@ -55,14 +69,53 @@
 	</beans:bean>
 
 	
+	<!-- 커스텀뷰 처리를 위한 Resolver 등록 -->
+	<beans:bean id="viewResolver"
+				class="org.springframework.web.servlet.view.BeanNameViewResolver" 
+				p:order="1"
+				/>
+	
+	<!-- 다운로드 커스텀 뷰 등록 -->
+	<beans:bean id="download" class="com.bitcamp.openp.customview.DownloadView" />
+	<!-- controller에서 커스텀뷰 이름과 동일하게 -->
+	
+	
+	<!-- 메일보내기 -->
+	<beans:bean id="mailSender"
+  		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+  		<beans:property name="host" value="smtp.gmail.com" />
+  		<beans:property name="port" value="587" /><!-- 465 or 25-->
+  		<beans:property name="username" value="naeeeeun@gmail.com" />
+  		<beans:property name="password" value="alrzldi2276" />
+  		<beans:property name="defaultEncoding" value="utf-8" />
+  		<beans:property name="javaMailProperties">
+   			<beans:props>
+    			<beans:prop key="mail.transport.protocol">smtp</beans:prop>
+    			<beans:prop key="mail.smtp.auth">true</beans:prop>
+    			<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+    			<beans:prop key="mail.debug">true</beans:prop>
+   			</beans:props>
+  		</beans:property>
+ 	</beans:bean>	
+	
+	
+		
+	
+	<beans:bean id="Aes256" class="com.bitcamp.open.security.Aes256">
+	
+	</beans:bean>
+	
+	
+	
+	
 	<context:component-scan base-package="com.bitcamp.openp" />
 		
-	<interceptors>
+<!-- 	<interceptors>
 		<interceptor>
 			<mapping path="/member/**"/>
-			<!-- <exclude-mapping path="mypage/help/**"/> -->
+			<exclude-mapping path="mypage/help/**"/>
 			<beans:bean class="com.bitcamp.openp.interceptor.AuthCheckInterceptor"/>			
 		</interceptor>
-	</interceptors>	
-	
+	</interceptors>	 -->
+		
 </beans:beans>

@@ -1,12 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-<%
-//String referer = request.getHeader("referer");
-//request.setAttribute("referer", referer);
-//System.out.println(referer);
-%>    
+<%@ page session="false" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,32 +37,13 @@
     <ul>
     	<li><a href="memberReg">회원가입</a></li>
         <li><a href="memberLogin">로그인</a></li>
-        <li><a href="memberLogout">로그아웃</a></li>
+        <li><a href="memberLogout">로그아웃</a></li>        
         <li><a href="memberList">회원리스트</a></li>
         <li><a href="Board">방명록작성</a></li>
         <li><a href="BoardList">방명록리스트</a></li>
-        <li><a href="mypage">마이페이지</a></li>      
+        <li><a href="mypage">마이페이지</a></li>       
         <li><a href="#">사원관리</a></li> 
-    </ul>
-	<form method="post">
-	<input type="hidden" name="${referer}" value="${referer}">
-	<table>
-		<tr>
-			<td>이메일</td>
-			<td><input type="text" name="email"></td>
-		</tr>
-		<tr>
-			<td>비밀번호</td>
-			<td><input type="password" name="password"></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="로그인"></td>		
-	</table>
-	</form>
-
+    </ul> 
+	<h1>메일 인증이 완료되지 않았습니다.</h1>
 </body>
 </html>
-
-
-
-

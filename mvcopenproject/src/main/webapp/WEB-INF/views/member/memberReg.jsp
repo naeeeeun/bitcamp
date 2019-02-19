@@ -38,10 +38,19 @@
     	<li><a href="memberReg">회원가입</a></li>
         <li><a href="memberLogin">로그인</a></li>
         <li><a href="memberLogout">로그아웃</a></li>        
-        <li><a href="memberlist">회원리스트</a></li>
-        <li><a href="board">방명록</a></li>        
+        <li><a href="memberList">회원리스트</a></li>
+        <li><a href="Board">방명록작성</a></li>
+        <li><a href="BoardList">방명록리스트</a></li>
+        <li><a href="mypage">마이페이지</a></li>      
         <li><a href="#">사원관리</a></li> 
     </ul>
 	<h1>회원가입을 축하합니다.</h1>	
+	
+<!-- 	<ul>
+		<li><a href="mail/simplemailsend">/mail/simplemailsend</a></li>
+		<li><a href="mail/mailsend">/mail/mailsend</a></li>	
+		<li><a href="mail/mailfilesend">/mail/mailfilesend</a></li>		
+	</ul> -->
+		
 </body>
 </html>
