@@ -1,4 +1,4 @@
-package com.bitcamp.open.security;
+package com.bitcamp.openp.security;
 
 import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
