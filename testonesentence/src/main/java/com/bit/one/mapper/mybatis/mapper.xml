@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.one.mapper.mybatis.mapper">
+
+
+	<select id="selectHashtagList"
+			resultType="java.lang.String">
+			
+		select hashtag
+		from hashtag, (select book.bookGenre as Genre, count(*) as count
+			   		   from (select one_sentence.isbn
+					 		 from (select oneSentenceIdx from liketo where userIdx = #{param}
+						   		   union all
+						   		   select oneSentenceIdx from one_sentence  where userIdx = #{param}) pr1, one_sentence
+					 		 where pr1.oneSentenceIdx = one_sentence.oneSentenceIdx) as pr2, book
+			   		   where pr2.isbn = book.isbn
+			   		   group by book.bookGenre  
+			   		   order by count(*) desc) as pr3
+		where hashtag.hashtagGenre in (pr3.Genre);
+
+		
+	</select>	
+	
+	
+	
+</mapper>
