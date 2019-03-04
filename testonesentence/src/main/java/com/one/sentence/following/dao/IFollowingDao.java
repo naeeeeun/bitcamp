@@ -1,6 +1,6 @@
-package com.bit.one.following.dao;
+package com.one.sentence.following.dao;
 
-import com.bit.one.following.model.Following;
+import com.one.sentence.following.model.Following;
 
 interface IFollowingDao {
 

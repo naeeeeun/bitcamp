@@ -39,7 +39,7 @@
 </head>
 <body>
    <header>
-       <h1><a href="../../one">One Sentence</a></h1>
+       <h1><a href="../../sentence">One Sentence</a></h1>
    </header> 
     <ul>
         <li><a href="hashtagList">취향분석</a></li>

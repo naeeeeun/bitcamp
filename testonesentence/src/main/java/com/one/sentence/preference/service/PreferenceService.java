@@ -1,11 +1,11 @@
-package com.bit.one.preference.service;
+package com.one.sentence.preference.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bit.one.preference.dao.HashtagDao;
+import com.one.sentence.preference.dao.HashtagDao;
 
 @Service
 public class PreferenceService implements IPreferenceService{

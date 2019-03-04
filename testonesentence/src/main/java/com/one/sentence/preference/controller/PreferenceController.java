@@ -1,4 +1,4 @@
-package com.bit.one.preference.controller;
+package com.one.sentence.preference.controller;
 
 import java.util.List;
 
@@ -9,8 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bit.one.preference.service.PreferenceService;
-//preference 기능은 login 거쳐야 함
+import com.one.sentence.preference.service.PreferenceService;
 
 @Controller
 public class PreferenceController {

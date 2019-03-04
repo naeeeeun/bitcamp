@@ -1,4 +1,4 @@
-package com.bit.one.preference.dao;
+package com.one.sentence.preference.dao;
 
 import java.util.List;
 

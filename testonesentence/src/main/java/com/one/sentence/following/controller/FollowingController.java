@@ -1,4 +1,4 @@
-package com.bit.one.following.controller;
+package com.one.sentence.following.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bit.one.following.model.Following;
-import com.bit.one.following.service.FollowingService;
+import com.one.sentence.following.model.Following;
+import com.one.sentence.following.service.FollowingService;
 
 
 @Controller

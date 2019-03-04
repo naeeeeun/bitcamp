@@ -1,11 +1,11 @@
-package com.bit.one.following.dao;
+package com.one.sentence.following.dao;
 
 import javax.inject.Inject;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.bit.one.following.model.Following;
+import com.one.sentence.following.model.Following;
 
 
 @Repository
@@ -14,7 +14,7 @@ public class FollowingDao implements IFollowingDao{
 	@Inject
 	private SqlSessionTemplate sqlSession;
 	
-	private String namespace="com.bit.one.preference.mapper.mybatis.mapper";
+	private String namespace="com.one.sentence.mapper.mybatis.mapper";
 	
 	@Override
 	public Following selectFollower(Following following) {

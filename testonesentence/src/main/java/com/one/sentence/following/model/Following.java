@@ -1,4 +1,4 @@
-package com.bit.one.following.model;
+package com.one.sentence.following.model;
 
 public class Following {
 

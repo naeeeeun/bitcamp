@@ -1,4 +1,4 @@
-package com.bit.one;
+package com.one.sentence;
 
 import java.text.DateFormat;
 import java.util.Date;

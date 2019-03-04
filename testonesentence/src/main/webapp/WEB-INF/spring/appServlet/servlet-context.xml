@@ -48,7 +48,7 @@
 		<beans:property name="dataSource" ref="dataSource"></beans:property>
 		
 		<!-- sql을 보관하는 mapper들을 등록 -->
-		<beans:property name="mapperLocations" value="classpath:com/bit/one/preference/mapper/mybatis/*.xml"></beans:property>
+		<beans:property name="mapperLocations" value="classpath:com/one/sentence/mapper/mybatis/*.xml"></beans:property>
 	</beans:bean>
 	
 	<!-- 템플릿 클래스 등록 -->
@@ -59,7 +59,7 @@
 
 
 	
-	<context:component-scan base-package="com.bit.one" />
+	<context:component-scan base-package="com.one.sentence" />
 		
 		
 </beans:beans>

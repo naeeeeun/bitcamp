@@ -1,4 +1,4 @@
-package com.bit.one.preference.dao;
+package com.one.sentence.preference.dao;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class HashtagDao implements IHashtagDao{
 	@Inject
 	private SqlSessionTemplate sqlSession;
 	
-	private String namespace="com.bit.one.preference.mapper.mybatis.mapper";	
+	private String namespace="com.one.sentence.mapper.mybatis.mapper";	
 	
 	@Override
 	public List<String> selectHashtagList(int userIdx) {

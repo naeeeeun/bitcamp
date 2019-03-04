@@ -1,6 +1,6 @@
-package com.bit.one.following.service;
+package com.one.sentence.following.service;
 
-import com.bit.one.following.model.Following;
+import com.one.sentence.following.model.Following;
 
 
 interface IFollowingService {

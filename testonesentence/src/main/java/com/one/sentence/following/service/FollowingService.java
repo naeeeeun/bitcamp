@@ -1,10 +1,10 @@
-package com.bit.one.following.service;
+package com.one.sentence.following.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bit.one.following.dao.FollowingDao;
-import com.bit.one.following.model.Following;
+import com.one.sentence.following.dao.FollowingDao;
+import com.one.sentence.following.model.Following;
 
 @Service
 public class FollowingService implements IFollowingService {

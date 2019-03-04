@@ -1,4 +1,4 @@
-package com.bit.one.preference.service;
+package com.one.sentence.preference.service;
 
 import java.util.List;
 
