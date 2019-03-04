@@ -1,4 +1,4 @@
-package com.bit.one.controller;
+package com.bit.one.preference.controller;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bit.one.service.HashtagListService;
+import com.bit.one.preference.service.HashtagListService;
 
 
 @Controller
@@ -18,12 +18,12 @@ public class HashtagListController {
 	@Autowired
 	HashtagListService service = new HashtagListService();
 	
-	@RequestMapping("/memberList")
+	@RequestMapping("/hashtagList")
 	public String getMemberlist(Model model, HttpServletRequest request) {
-		int userIdx = 1;
-		List<String> memberlist = service.genrePreference(userIdx);
-		model.addAttribute("memberlist", memberlist);
+		int userIdx = 2;
+		List<String> hashtaglist = service.genrePreference(userIdx);
+		model.addAttribute("hashtaglist", hashtaglist);
 		
-		return "member/memberList";
+		return "preference/hashtagList";
 		}
 	}

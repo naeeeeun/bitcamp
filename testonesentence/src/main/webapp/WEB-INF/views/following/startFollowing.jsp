@@ -25,28 +25,27 @@
         a:visited{
         	color:black;
         }
-        div>h3{
-        	margin-left : 30px;
+        
+        table{
+        	border:1px solid silver;     
+        	border-collapse: collapse;   	
+        }
+        
+        td{
+        	border:1px solid silver;
+        	padding:10px;
         }
     </style>
 </head>
 <body>
    <header>
-       <h1><a href="../../openp">Open Project</a></h1>
+       <h1><a href="../../one">One Sentence</a></h1>
    </header> 
     <ul>
-    	<li><a href="memberReg">회원가입</a></li>
-        <li><a href="memberLogin">로그인</a></li>
-        <li><a href="memberLogout">로그아웃</a></li>        
-        <li><a href="memberList">회원리스트</a></li>
-        <li><a href="Board">방명록작성</a></li>
-        <li><a href="BoardList">방명록리스트</a></li>
-        <li><a href="mypage">마이페이지</a></li>      
-        <li><a href="#">사원관리</a></li> 
-    </ul>
-	<h1>회원가입을 축하합니다.</h1>	
-	<h3>가입하신 이메일로 가입 인증메일이 발송되었습니다.</h3>
+        <li><a href="hashtagList">취향분석</a></li>
+        <li><a href="following">팔로잉</a></li>    
+    </ul>  
+	<h1>팔로잉 성공</h1>
 
-		
 </body>
 </html>

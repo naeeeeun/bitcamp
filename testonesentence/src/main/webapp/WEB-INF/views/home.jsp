@@ -33,11 +33,12 @@
        <h1><a href="./">One Sentence</a></h1>
    </header> 
     <ul>
-        <li><a href="memberList">회원리스트</a></li>                
+        <li><a href="hashtagList">취향분석</a></li>
+        <li><a href="following">팔로잉</a></li>                
     </ul>
     
     <div>
-    	<h2>취향분석 기능 구현 (= hashtag list 가져오기)</h2>
+    	<h2>취향분석, 팔로잉</h2>
     </div>
 </body>
 </html>

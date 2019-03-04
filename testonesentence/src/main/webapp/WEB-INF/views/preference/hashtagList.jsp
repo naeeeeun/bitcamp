@@ -42,14 +42,18 @@
        <h1><a href="../../one">One Sentence</a></h1>
    </header> 
     <ul>
-        <li><a href="memberList">회원리스트</a></li>    
+        <li><a href="hashtagList">취향분석</a></li>
+        <li><a href="following">팔로잉</a></li>    
     </ul>  
-	<h1>회원리스트</h1>
+	<h1>도서 선호태그</h1>
 	<table>
-		<c:forEach items="${memberlist}" var="member">
+		<c:set var="count" value="1" /> 
+		<c:forEach items="${hashtaglist}" var="hashtag">
 			<tr>
-				<td>${member}</td>
+				<td>${count}</td>
+				<td>${hashtag}</td>
 			</tr>
+			<c:set var="count" value="${count+1}" />
 		</c:forEach>
 	</table>
 </body>

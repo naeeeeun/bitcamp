@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bit.one.mapper.mybatis.mapper">
+<mapper namespace="com.bit.one.preference.mapper.mybatis.mapper">
 
 
 	<select id="selectHashtagList"
@@ -15,11 +15,26 @@
 					 		 where pr1.oneSentenceIdx = one_sentence.oneSentenceIdx) as pr2, book
 			   		   where pr2.isbn = book.isbn
 			   		   group by book.bookGenre  
-			   		   order by count(*) desc) as pr3
+			   		   order by count(*) desc
+			   		   limit 0,3) as pr3
 		where hashtag.hashtagGenre in (pr3.Genre);
-
 		
 	</select>	
+	
+	<select id="selectFollower"
+			resultType="com.bit.one.following.model.Following">
+		select * from following where userIdx=#{userIdx} and followingUserIdx=#{followingUserIdx};
+	</select>
+	
+	<insert id="insertFollower">
+		insert into following(userIdx, followingUserIdx) values(#{userIdx}, #{followingUserIdx});
+	</insert>
+	
+	<delete id="deleteFollower">
+		delete from following where userIdx=#{userIdx} and followingUserIdx = #{followingUserIdx};
+	</delete>
+	
+
 	
 	
 	
