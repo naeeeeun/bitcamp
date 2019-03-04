@@ -29,12 +29,12 @@ public class FollowingController {
 
 		if(result !=null) { // 이미 팔로잉 되어있음 -> 팔로잉 해지
 			service.unfollowing(following);
-			return "following/unfollowing";
+			return "following/Unfollowing";
 		}
 
 		else { // 팔로잉 시작
 			service.startFollowing(following);			
-			return "following/startFollowing";
+			return "following/StartFollowing";
 		}
 
 		

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.bit.one.preference.dao.HashtagDao;
 
 @Service
-public class HashtagListService implements IHashtagListService{
+public class PreferenceService implements IPreferenceService{
 
 	@Autowired
 	private HashtagDao dao;
