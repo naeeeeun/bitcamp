@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.bit.one.preference.service.PreferenceService;
-
+//preference 기능은 login 거쳐야 함
 
 @Controller
 public class PreferenceController {
