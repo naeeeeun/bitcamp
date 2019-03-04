@@ -9,17 +9,16 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public class HashtagDao {
-	
+public class HashtagDao implements IHashtagDao{
+
 	@Inject
 	private SqlSessionTemplate sqlSession;
 	
-	private String namespace="com.bit.one.preference.mapper.mybatis.mapper";
-
+	private String namespace="com.bit.one.preference.mapper.mybatis.mapper";	
 	
+	@Override
 	public List<String> selectHashtagList(int userIdx) {
 		return sqlSession.selectList(namespace+".selectHashtagList", userIdx);
 	}
-
-	
+		
 }

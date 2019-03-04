@@ -8,13 +8,16 @@ import org.springframework.stereotype.Service;
 import com.bit.one.preference.dao.HashtagDao;
 
 @Service
-public class HashtagListService {
+public class HashtagListService implements IHashtagListService{
 
 	@Autowired
 	private HashtagDao dao;
 	
-	public List<String> genrePreference(int userIdx) {	
+	@Override
+	public List<String> genrePreference(int userIdx) {
 		return dao.selectHashtagList(userIdx);
 	}
+
+
 	
 }

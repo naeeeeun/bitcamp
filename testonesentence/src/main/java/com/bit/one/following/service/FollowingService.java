@@ -7,21 +7,25 @@ import com.bit.one.following.dao.FollowingDao;
 import com.bit.one.following.model.Following;
 
 @Service
-public class FollowingService {
+public class FollowingService implements IFollowingService {
 
 	@Autowired
 	private FollowingDao dao;
 	
+	@Override
 	public Following checkFollowingState(Following following) {
 		return dao.selectFollower(following);
 	}
-	
-	public int startFollowing(Following following) {	
+
+	@Override
+	public int startFollowing(Following following) {
 		return dao.insertFollower(following);
 	}
-	
-	public int unfollowing(Following following) {	
+
+	@Override
+	public int unfollowing(Following following) {
 		return dao.deleteFollower(following);
 	}
+
 	
 }

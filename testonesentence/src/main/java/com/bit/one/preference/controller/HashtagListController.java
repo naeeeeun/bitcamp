@@ -20,7 +20,7 @@ public class HashtagListController {
 	
 	@RequestMapping("/hashtagList")
 	public String getMemberlist(Model model, HttpServletRequest request) {
-		int userIdx = 2;
+		int userIdx = 3;
 		List<String> hashtaglist = service.genrePreference(userIdx);
 		model.addAttribute("hashtaglist", hashtaglist);
 		
