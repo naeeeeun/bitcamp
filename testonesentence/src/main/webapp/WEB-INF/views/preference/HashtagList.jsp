@@ -47,13 +47,13 @@
     </ul>  
 	<h1>도서 선호태그</h1>
 	<table>
-		<c:set var="count" value="1" /> 
+<%-- 		<c:set var="count" value="1" />  --%>
 		<c:forEach items="${hashtaglist}" var="hashtag">
 			<tr>
-				<td>${count}</td>
+<%-- 				<td>${count}</td> --%>
 				<td>${hashtag}</td>
 			</tr>
-			<c:set var="count" value="${count+1}" />
+<%-- 			<c:set var="count" value="${count+1}" /> --%>
 		</c:forEach>
 	</table>
 </body>

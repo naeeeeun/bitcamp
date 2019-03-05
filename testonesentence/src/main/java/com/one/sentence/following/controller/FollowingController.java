@@ -5,24 +5,36 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.one.sentence.following.model.Following;
 import com.one.sentence.following.service.FollowingService;
 
 
 @Controller
+@RequestMapping("/following")
 public class FollowingController {
 
 	@Autowired
 	FollowingService service = new FollowingService();
 	
+	@RequestMapping(method=RequestMethod.GET)
+	public String GetFollowingForm() {
+		return "following/FollowingForm";
+	}
 	
-	@RequestMapping("/following")
-	public String getMemberlist(Model model, HttpServletRequest request) {
-		Following following = new Following();
-		following.setUserIdx(2);
-		following.setFollowingUserIdx(3);
+	
+	@RequestMapping(method=RequestMethod.POST)
+	public String ClickFollowingButton(Model model, HttpServletRequest request, 
+								Following following) {
+		
+		//하드코딩
+		//Following following = new Following();
+		//following.setUserIdx(2);
+		//following.setFollowingUserIdx(8);
+
 		
 		Object result = service.checkFollowingState(following);
 		

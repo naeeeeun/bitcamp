@@ -45,7 +45,22 @@
         <li><a href="hashtagList">취향분석</a></li>
         <li><a href="following">팔로잉</a></li>    
     </ul>  
-	<h1>팔로잉 성공</h1>
+	
+	<form action="" method="post">
+		<table>
+			<tr>
+				<td>userIdx</td>
+				<td><input type="text" name="userIdx" value=""></td>
+			</tr>
+			<tr>
+				<td>followingUserIdx</td>
+				<td><input type="text" name="followingUserIdx" value=""></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="팔로우 버튼"></td>
+			</tr>						
+		</table>
+	</form>
 
 </body>
 </html>

@@ -26,7 +26,7 @@
         	color:black;
         }
         
-        table{
+/*         table{
         	border:1px solid silver;     
         	border-collapse: collapse;   	
         }
@@ -34,7 +34,7 @@
         td{
         	border:1px solid silver;
         	padding:10px;
-        }
+        } */
     </style>
 </head>
 <body>
