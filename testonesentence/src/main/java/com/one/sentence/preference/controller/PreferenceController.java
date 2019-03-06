@@ -41,7 +41,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.one.sentence.following.model.Following;
 import com.one.sentence.preference.service.PreferenceService;
 
 @Controller
@@ -64,12 +63,18 @@ public class PreferenceController {
 		List<String> hashtaglist = service.genrePreference(userIdx);
 		
 		//System.out.println(hashtaglist.size());
-		if(hashtaglist.size()==0)
+		
+		String returnpage="";
+		if(hashtaglist.size()==0) {
 			hashtaglist.add("아직 등록한 문장, 좋아요 한 문장이 없습니다~");
+			returnpage = "preference/NoHashtagList";
+		}
+		else	
+			returnpage = "preference/HashtagList";
 		
 		model.addAttribute("hashtaglist", hashtaglist);
 		
-		return "preference/HashtagList";
+		return returnpage;
 		}
 	
 	}

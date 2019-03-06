@@ -12,7 +12,8 @@
 				  select oneSentenceIdx from one_sentence  where userIdx = #{param}) as pr1, hashtag
 			where pr1.oneSentenceIdx=hashtag.oneSentenceIdx
 		    group by hashtag
-			order by count desc;
+			order by count desc, hashtag asc
+			limit 0,10;
 		
 	</select>	
 	
